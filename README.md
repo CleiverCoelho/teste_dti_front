@@ -1,12 +1,9 @@
 # React + Vite
-# Weather and Forecast application to test my tecnical skills
-You can access the web application deploy by clicking [here](https://650b846e4f8ffb6d3fa24ce6--wforecastapp.netlify.app/), or locally by following the steps to run the application on your machine, described below.
-
 
 ## Installation
 
 ```bash
-$ git clone https://github.com/CleiverCoelho/desafio_tecnico
+$ git clone https://github.com/CleiverCoelho/teste_dti_front
 $ cd desafio_tecnico
 $ npm install
 ```
@@ -17,7 +14,7 @@ First you have to acces the weather api to generate your own free key api to acc
 
 Create a .env file on the root of the project with your api ky
 ```bash
-VITE_API_KEY=your_generated_key
+VITE_API_KEY=my_back_end_test
 ```
 #preview
 `$ npm run preview`
