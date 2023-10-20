@@ -21,7 +21,7 @@ export default function SearchBar({ setWeatherInfo, setCity, city, setForecastDa
                 }
             })
             .catch((err) => {
-                console.log(err);
+                toast("Não foi possível localizar cidade ", city);
             })
     }
 
