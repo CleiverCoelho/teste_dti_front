@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Title = styled.h1`
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 600;
     margin-top: 20px;
 `
 
@@ -13,4 +13,5 @@ export const MainPageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Playball';
 `

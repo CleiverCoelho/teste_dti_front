@@ -5,6 +5,7 @@ export default function Footer() {
     return (
         <FooterContainer>
             <Option to="newpetshop">Novo Petshop</Option>
+            <Option to="/">Home</Option>
             <Option to="/petday">Novo PetDay</Option>
         </FooterContainer>
     )
@@ -17,6 +18,12 @@ const FooterContainer = styled.div`
     height: 65px;
     position: fixed;
     bottom: 0px;
+    font-family: 'Playball';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 49px;
+    color: white;
     left: 0px;
     z-index: 2;
     display: flex;

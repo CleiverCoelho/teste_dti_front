@@ -1,4 +1,4 @@
-import { getForecastInfo } from "../../services/api";
+import { getForecastInfo } from "../../../services/api";
 import { BarContainer, Button, Search } from "./style";
 import dayjs from 'dayjs';
 import { ToastContainer, toast } from 'react-toastify';

@@ -1,7 +1,9 @@
 import './App.css'
-import GraphPage from './pages/graphPage';
-import MainPage from './pages/mainPage'
+import MainPage from './pages/main'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NewPetshop from './pages/newPetshop';
+import NewPetDay from './pages/newPetDay';
+import Footer from './pages/components/footer';
 
 function App() {
 
@@ -9,10 +11,10 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route path={`/`} element={<MainPage></MainPage>}></Route>
-          <Route path={`/newpetday`} element={<MainPage></MainPage>}></Route>
-          <Route path={`/newpetshop`} element={<MainPage></MainPage>}></Route>
-
+          <Route path={`/newpetday`} element={<NewPetDay></NewPetDay>}></Route>
+          <Route path={`/newpetshop`} element={<NewPetshop></NewPetshop>}></Route>
         </Routes>
+        <Footer></Footer>
     </BrowserRouter>
   )
 }
