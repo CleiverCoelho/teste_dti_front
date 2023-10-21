@@ -1,16 +1,21 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import styled from "styled-components"
 import ReactDatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
 import * as petApi from "../../../services/petshopsApi"
 import BestPetshopContext from "../../../contexts/bestPetshopContext";
+import Petshop from "../petshops/Petshop";
+import ResultOption from "./ResultOption";
+import { toast } from "react-toastify";
 
 export default function PetDayInput() {
     const [form, setForm] = React.useState({ bigSizes: "", smallSizes: "" });
     const [date, setDate] = React.useState();
-    const { setBestPetshop } = useContext(BestPetshopContext);
+    const [petshopResult, setPetshopResult] = React.useState({});
+    const { bestPetshop, setBestPetshop } = useContext(BestPetshopContext);
 
+    useEffect(() => {}, [bestPetshop]);
 
     function handleSubmit(e){
         e.preventDefault()
@@ -20,7 +25,11 @@ export default function PetDayInput() {
             date: dayjs(new Date(date)).format("DD/MM/YYYY")
         };
 
-        petApi.check(body).then((res) => setBestPetshop({...res, searchInfo: body})).catch((err) => toast(err));
+        petApi.check(body).then((res) => {
+            setBestPetshop({...res, searchInfo: body});
+            setPetshopResult(...res);
+        })
+        .catch((err) => toast(err));
     }
 
     function handleChangeForm (event){
@@ -55,6 +64,7 @@ export default function PetDayInput() {
                     <Button>Buscar melhor opção</Button>
                 </BodyInfos>
             </div>
+            <ResultOption petshop={bestPetshop}></ResultOption>
         </PetDayInputContainer>
     )
 }

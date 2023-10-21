@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import BestPetshopContext from "../../../contexts/bestPetshopContext";
 
-export default function Petshop ({ petshop }) {
-
-    const { bestPetshop } = useContext(BestPetshopContext);
-    const [petshopId, setPetshopId] = React.useState(petshop.id);
+export default function ResultOption ({ petshop }) {
 
     return (
-        <PetshopContainer isthebestoption={(bestPetshop?.id === petshopId).toString()}>
+    <>
+        <OptionText isthebestoption={(petshop?.id ? true : false).toString()}>Sua melhor opção é</OptionText>
+        <PetshopContainer isthebestoption={(petshop?.id ? true : false).toString()}>
             <h1>{petshop.name}</h1>
             <InfoContainer>
                 <Info>
@@ -24,26 +22,31 @@ export default function Petshop ({ petshop }) {
                 </Info>
             </InfoContainer>
             <Distance>apenas {petshop.distance}m de voce</Distance>
-            <BestOptionText 
-                isthebestoption={(bestPetshop?.id === petshopId).toString()}
-                >
-                    É sua melhor opção da ultima pesquisa para o dia: {bestPetshop?.searchInfo?.date}
-            </BestOptionText>
         </PetshopContainer>
+    </>
     )
 }
+
+const OptionText = styled.div`
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 30px;
+    display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
+
+`
 
 const PetshopContainer = styled.div`
     width: 390px;
     height: 360px;
-    display: flex;
+    display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 0px 10px;
-    border: ${(props) => `${props.isthebestoption === "true" ? "10px" : "1px"} solid grey`};
+    border: 10px solid grey;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 90px;
     
     h1{
         font-size: 25px;
@@ -77,8 +80,6 @@ const BestOptionText = styled.div`
     font-weight: 600;
     color: 'dark-yellow';
     margin-bottom: 10px;
-    /* display: none; */
-    display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
 `
 
 const InfoContainer = styled.div`
