@@ -1,20 +1,25 @@
 import styled from "styled-components"
 import Petshop from "./Petshop"
+import usePetshop from "../../../hooks/api/usePetshops";
 
 export default function PetshopsPage () {
+    const { data } = usePetshop();
+    console.log(data);
     return (
         <PetshopsContainer>
-            <Petshop></Petshop>
-            <Petshop></Petshop>
-            <Petshop></Petshop>
-            <Petshop></Petshop>
-            <Petshop></Petshop>
+            {data?.map((petshop) => {
+                return (
+                    <Petshop
+                        bigSizeWeekPrice={petshop}
+                    ></Petshop>
+                )
+            })}
         </PetshopsContainer>
     )
 }
 
 const PetshopsContainer = styled.div`
-    width: 700px;
+    width: 800px;
     height: auto;
     margin-top: 20px;
     display: flex;

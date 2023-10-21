@@ -4,10 +4,6 @@ import PetshopsPage from "../components/petshops";
 
 export default function MainPage({ data }){
 
-    useEffect(() => {
-        if(data) console.log(data);
-      }, []);
-
     return (
         <MainPageContainer>
             <Title>
