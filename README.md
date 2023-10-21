@@ -4,6 +4,10 @@ Voce pode testar o deploy da aplicação no seguinte link: https://teste-dti-fro
 
 O link para o repositório do back-end segue: https://github.com/CleiverCoelho/teste_dti_back
 
+
+https://github.com/CleiverCoelho/teste_dti_front/assets/102709370/d350ae2e-21f1-480e-8e12-6a3300cd67ff
+
+
 ## Premissas
 - Para rodar essa aplicação é preciso ter o gerenciador de pacotes para aplicações Nodejs chamado "NPM". 
 - É preciso ter o sistema de controle de versões distribuído "Git" para seguir os comandos de instalação local (voce também pode baixar o zip do arquivo). 
