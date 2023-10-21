@@ -1,22 +1,35 @@
-# React + Vite
+# Desafio Tecnico Mr Eduardo - DTI Digital
 
-## Installation
+Voce pode testar o deploy da aplicação no seguinte link: https://teste-dti-front.vercel.app/ <br/> <br/>
+
+O link para o repositório do back-end segue: https://github.com/CleiverCoelho/teste_dti_back
+
+## Premissas
+- Para rodar essa aplicação é preciso ter o gerenciador de pacotes para aplicações Nodejs chamado "NPM". 
+- É preciso ter o sistema de controle de versões distribuído "Git" para seguir os comandos de instalação local (voce também pode baixar o zip do arquivo). 
+- Para evitar problemas com versões também aconselho rodar esta aplicação no Sistema Operacional do Linux Ubuntu 20.04
+
+## Decisões de Projeto
+- Nesta aplicação decidi utilizar a ferramenta do react + vite, para construir uma aplicação organizada. Nesse sentido, pude manter o controle tanto de requisições com axios, utilizando Hooks de chamadas assincronas, assim como do ciclo de vida dos meus componentes para renderização das informações no momento certo.
+- Ainda, para evitar o chamado "Prop Drilling", utilizei um context que armazena e destaca a melhor opção de petshop - esta encontrada na última pesquisa feita pelo usuário - na renderização dos petshops cadastrados no sistema para a pagina Main. Assim, tive acesso a essas informações diretamente a partir dos proprios componentes.
+- Por fim, utilizei a lib "react-router-dom", para separar as paginas de acordo com suas funcionalidades, assim como a lib "react-datepicker" para facilitar a experiência de input de datas por parte do usuário e evitar bad requests por bodys invalidos nas requisicoes para a api.
+
+
+## Instalação
 
 ```bash
 $ git clone https://github.com/CleiverCoelho/teste_dti_front
-$ cd desafio_tecnico
+$ cd teste_dti_front
 $ npm install
 ```
 
-## Running the app
+## Rodando o app
 
-First you have to acces the weather api to generate your own free key api to acces weather and forecast data
-
-Create a .env file on the root of the project with your api ky
+Crie um arquivo .env na raiz do diretório. Voce pode seguir o arquivo .env.example
 ```bash
-VITE_API_KEY=my_back_end_test
+VITE_API_KEY=http://localhost:5000
 ```
-#preview
+# preview
 `$ npm run preview`
 
 # development
@@ -24,13 +37,3 @@ VITE_API_KEY=my_back_end_test
 
 # prod
 `$ npm run build`
-
-## Running the app with docker image
-
-```bash
-$ docker build -t desafio_vite .
-$ docker run --name desafioVite -p 8080:80 desafio_vite
-```
-
-#open your favorite browser and access the `localhost:8080` url to preview the project
-
