@@ -4,8 +4,9 @@ import dayjs from "dayjs";
 import * as petApi from "../../../services/petshopsApi"
 import BestPetshopContext from "../../../contexts/bestPetshopContext";
 import ResultOption from "./ResultOption";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { BodyInfos, Button, DatePicker, Input, PetDayInputContainer } from "./style";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function PetDayInput() {
     const [form, setForm] = React.useState({ bigSizes: "", smallSizes: "" });
@@ -27,7 +28,7 @@ export default function PetDayInput() {
             setBestPetshop({...res, searchInfo: body});
             setPetshopResult(...res);
         })
-        .catch((err) => toast(err));
+        .catch((err) => toast(err.response.data.error));
     }
 
     function handleChangeForm (event){
@@ -35,6 +36,7 @@ export default function PetDayInput() {
     }
     return (
         <PetDayInputContainer>
+            <ToastContainer></ToastContainer>
             <div>
                 <BodyInfos onSubmit={handleSubmit}>
                     <DatePicker 
