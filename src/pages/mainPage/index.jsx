@@ -3,6 +3,7 @@ import { MainPageContainer, Title } from "./style";
 import GraphPage from "../graphPage";
 import SearchBar from "../searchBarPage";
 import PetshopsPage from "../petshopsPage";
+import Footer from "./Footer";
 
 export default function MainPage(){
     const [city, setCity] = useState();
@@ -24,6 +25,7 @@ export default function MainPage(){
                 Consulte os Petshops cadastrados no Sistema
             </Title>
             <PetshopsPage></PetshopsPage>
+            <Footer></Footer>
         </MainPageContainer>
     )
 }

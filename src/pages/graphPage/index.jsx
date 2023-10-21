@@ -18,7 +18,7 @@ export default function GraphPage({ weatherControl, forecastData }) {
 
 const GraphContainer = styled.div`
     width: 890px;
-    height: 800px;
+    height: 400px;
     display: ${( props ) => !props.display ? "flex" : "none"};
     margin-top: 40px;
 `
