@@ -2,8 +2,8 @@ import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_API_KEY
 
-export async function create(body) {
-  const response = await axios.post(`${BASE_URL}/petshop`, body)
+export async function check(body) {
+  const response = await axios.post(`${BASE_URL}/petshop/check`, body)
   
   return response.data;
 };

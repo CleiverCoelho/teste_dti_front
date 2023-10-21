@@ -1,13 +1,13 @@
 import styled from "styled-components"
 import PetDayInput from "../components/petDayInput"
 
-export default function NewPetDay() {
+export default function NewPetDay({ setBestPetshop }) {
     return (
         <PetDayContainer>
             <h1>
                 Qual é o melhor petshop?
             </h1>
-            <PetDayInput>
+            <PetDayInput setBestPetshop={setBestPetshop}>
 
             </PetDayInput>
         </PetDayContainer>
@@ -21,4 +21,10 @@ const PetDayContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    h1 {
+        font-size: 30px;
+        font-weight: 600;
+        margin: 30px 0px;
+    }
 `
