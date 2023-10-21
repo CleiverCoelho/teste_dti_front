@@ -23,7 +23,7 @@ export default function Petshop ({ petshop }) {
                     <p>pequeno porte <br></br> R$ {petshop.weekEndSmallPrice}</p>
                 </Info>
             </InfoContainer>
-            <Distance>apenas {petshop.distance}m de voce</Distance>
+            <Distance>apenas {petshop.distance >= 1000 ? `${petshop.distance/1000}km` : `${petshop.distance}m`} de voce</Distance>
             <BestOptionText 
                 isthebestoption={(bestPetshop?.id === petshopId).toString()}
                 >
