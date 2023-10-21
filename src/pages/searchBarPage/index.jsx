@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function SearchBar({ setWeatherInfo, setCity, city, setForecastData }){
+export default function SearchBar({ setCity, city, setForecastData }){
     const weekDays = ["dom", "seg", "ter", "qua", "qui", "sex", "sab"];
 
     function handleSubmit(e){
@@ -16,7 +16,6 @@ export default function SearchBar({ setWeatherInfo, setCity, city, setForecastDa
                     const parsedData = res?.data.list.map(({ dt_txt, main }) => {
                         return {weekday: `${weekDays[(new Date(dt_txt)).getDay()]} (${dayjs(dt_txt).format("DD/MM")})`, temp: main?.temp}
                     })
-                    
                     setForecastData(parsedData);
                 }
             })

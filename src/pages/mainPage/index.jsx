@@ -2,6 +2,7 @@ import { useState } from "react"
 import { MainPageContainer, Title } from "./style";
 import GraphPage from "../graphPage";
 import SearchBar from "../searchBarPage";
+import PetshopsPage from "../petshopsPage";
 
 export default function MainPage(){
     const [city, setCity] = useState();
@@ -9,13 +10,20 @@ export default function MainPage(){
 
     return (
         <MainPageContainer>
-            <Title>Devo levar um casaquinho?</Title>
+            <Title>
+                Quer saber o melhor dia para levar seus pets? <br></br>
+                Consulte a previsão do tempo
+            </Title>
             <SearchBar
                 setCity={setCity}
                 setForecastData={setForecastData}
                 city={city}
             ></SearchBar>
             <GraphPage weatherControl={forecastData} forecastData={forecastData}></GraphPage>
+            <Title>
+                Consulte os Petshops cadastrados no Sistema
+            </Title>
+            <PetshopsPage></PetshopsPage>
         </MainPageContainer>
     )
 }
