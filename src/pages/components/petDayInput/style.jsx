@@ -57,6 +57,7 @@ export const Button = styled.button`
     border-radius: 10px;
     border: 1px solid grey;
     color: white;
+    background-color: darkgray;
     @media (max-width: 768px) {
         width: 250px;
       }

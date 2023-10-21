@@ -45,7 +45,7 @@ export default function PetDayInput() {
                     />                    
                     <Input
                         placeholder="Quantos Pets de grande porte?"
-                        type="text"
+                        type="number"
                         name="bigSizes"
                         value={form.bigSizes}
                         onChange={event => handleChangeForm(event)}
@@ -53,7 +53,7 @@ export default function PetDayInput() {
                     ></Input>
                     <Input
                         placeholder="Quantos Pets de pequeno porte?"
-                        type="text"
+                        type="number"
                         name="smallSizes"
                         value={form.smallSizes}
                         onChange={event => handleChangeForm(event)}
