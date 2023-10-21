@@ -6,7 +6,7 @@ export default function Footer() {
         <FooterContainer>
             <Option to="newpetshop">Novo Petshop</Option>
             <Option to="/">Home</Option>
-            <Option to="/petday">Novo PetDay</Option>
+            <Option to="/newpetday">Novo PetDay</Option>
         </FooterContainer>
     )
 }
