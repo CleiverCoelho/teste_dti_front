@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function ResultOption ({ petshop }) {
 
     return (
-    <>
+    <Container>
         <OptionText isthebestoption={(petshop?.id ? true : false).toString()}>Sua melhor opção é</OptionText>
         <PetshopContainer isthebestoption={(petshop?.id ? true : false).toString()}>
             <h1>{petshop.name}</h1>
@@ -23,24 +23,34 @@ export default function ResultOption ({ petshop }) {
             </InfoContainer>
             <Distance>apenas {petshop.distance}m de voce</Distance>
         </PetshopContainer>
-    </>
+    </Container>
     )
 }
+
+const Container = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
 
 const OptionText = styled.div`
     font-size: 25px;
     font-weight: 600;
     margin-top: 30px;
     width: 390px;
+    text-align: center;
     display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
+    align-items: center;
+    justify-content: center;
     @media (max-width: 768px) {
         width: 280px;
 
         h1 {
-            width: 280px;
             font-size: 18px;
         }
-    }
+    }   
 `
 
 const PetshopContainer = styled.div`
