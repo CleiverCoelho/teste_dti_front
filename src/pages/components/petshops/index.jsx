@@ -1,16 +1,19 @@
 import styled from "styled-components"
 import Petshop from "./Petshop"
 import usePetshop from "../../../hooks/api/usePetshops";
+import { useEffect } from "react";
 
 export default function PetshopsPage () {
     const { data } = usePetshop();
-    console.log(data);
+
+    useEffect(() => {}, [data]);
+
     return (
         <PetshopsContainer>
             {data?.map((petshop) => {
                 return (
                     <Petshop
-                        bigSizeWeekPrice={petshop}
+                        petshop={petshop}
                     ></Petshop>
                 )
             })}
@@ -19,7 +22,7 @@ export default function PetshopsPage () {
 }
 
 const PetshopsContainer = styled.div`
-    width: 800px;
+    width: 900px;
     height: auto;
     margin-top: 20px;
     display: flex;

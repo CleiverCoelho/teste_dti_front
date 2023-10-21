@@ -1,29 +1,33 @@
+import React from "react";
 import styled from "styled-components";
 
-export default function Petshop () {
+export default function Petshop ({ petshop }) {
+
+    const [petshopId, setPetshopId] = React.useState(petshop.id);
+
     return (
         <PetshopContainer>
             <h1>Primeiro Petshop</h1>
             <InfoContainer>
                 <Info>
                     <h2>Seg à Sex</h2>
-                    <p>grande porte R$ 20,00</p>
-                    <p>pequeno porte R$ 20,00</p>
+                    <p>grande porte R$ {petshop.weekDayBigPrice}</p>
+                    <p>pequeno porte R$ {petshop.weekDaySmallPrice}</p>
                 </Info>
                 <Div></Div>
                 <Info>
                     <h2>Sab e Dom</h2>
-                    <p>grande porte R$ 20,00</p>
-                    <p>pequeno porte R$ 20,00</p>
+                    <p>grande porte R$ {petshop.weekEndBigPrice}</p>
+                    <p>pequeno porte R$ {petshop.weekEndSmallPrice}</p>
                 </Info>
             </InfoContainer>
-            <Distance>apenas 2000m de voce</Distance>
+            <Distance>apenas {petshop.distance}m de voce</Distance>
         </PetshopContainer>
     )
 }
 
 const PetshopContainer = styled.div`
-    width: 360px;
+    width: 390px;
     height: 360px;
     display: flex;
     flex-direction: column;
@@ -46,6 +50,9 @@ const Div = styled.div`
     margin-top: 30px;
     border: .1px solid grey;
     height: 80%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
 `
 
 const Distance = styled.div`
