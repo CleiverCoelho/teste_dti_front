@@ -23,9 +23,17 @@ export default function ResultOption ({ petshop }) {
             </InfoContainer>
             <Distance>apenas {petshop.distance}m de voce</Distance>
         </PetshopContainer>
+        <TotalPrice isthebestoption={(petshop?.id ? true : false).toString()}>Total R$ {petshop?.totalPrice}</TotalPrice>
     </Container>
     )
 }
+
+export const TotalPrice = styled.div`
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 100px;
+    display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
+`
 
 const Container = styled.div`
     width: 100%;
