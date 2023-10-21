@@ -50,6 +50,14 @@ const PetshopContainer = styled.div`
         font-weight: 600;
         margin-top: 20px;
     }
+
+    @media (max-width: 768px) {
+        width: 280px;
+
+        h1 {
+            font-size: 18px;
+        }
+    }
 `
 
 const Div = styled.div`

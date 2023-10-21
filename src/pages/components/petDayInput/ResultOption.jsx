@@ -31,8 +31,16 @@ const OptionText = styled.div`
     font-size: 25px;
     font-weight: 600;
     margin-top: 30px;
+    width: 390px;
     display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
+    @media (max-width: 768px) {
+        width: 280px;
 
+        h1 {
+            width: 280px;
+            font-size: 18px;
+        }
+    }
 `
 
 const PetshopContainer = styled.div`
@@ -53,6 +61,15 @@ const PetshopContainer = styled.div`
         font-weight: 600;
         margin-top: 20px;
     }
+
+    @media (max-width: 768px) {
+        width: 280px;
+
+        h1 {
+            width: 280px;
+            font-size: 18px;
+        }
+    }
 `
 
 const Div = styled.div`
@@ -66,19 +83,10 @@ const Div = styled.div`
 `
 
 const Distance = styled.div`
-    width: 90%;
+    width: 80%;
     height: 20px;
     font-size: 15px;
     font-weight: 400;
-    margin-bottom: 10px;
-`
-
-const BestOptionText = styled.div`
-    width: 90%;
-    height: 20px;
-    font-size: 15px;
-    font-weight: 600;
-    color: 'dark-yellow';
     margin-bottom: 10px;
 `
 
@@ -88,7 +96,6 @@ const InfoContainer = styled.div`
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0px 10px;
 `
 
 const Info = styled.div`
@@ -106,6 +113,6 @@ const Info = styled.div`
     }
 
     p {
-        width: 100%;
+        width: 90%;
     }
 `

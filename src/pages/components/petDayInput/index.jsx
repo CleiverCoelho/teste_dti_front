@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
 import * as petApi from "../../../services/petshopsApi"
 import BestPetshopContext from "../../../contexts/bestPetshopContext";
-import Petshop from "../petshops/Petshop";
 import ResultOption from "./ResultOption";
 import { toast } from "react-toastify";
 
@@ -79,6 +78,10 @@ const DatePicker = styled(ReactDatePicker)`
     font-weight: 400;
     font-size: large;
     text-align: center;
+
+    @media (max-width: 768px) {
+        width: 250px;
+      }
 `
 
 const PetDayInputContainer = styled.div`
@@ -91,26 +94,36 @@ const PetDayInputContainer = styled.div`
 `
 
 const BodyInfos = styled.form`
-    width: 500px;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media (max-width: 768px) {
+        width: 250px;
+      }
 `
 
 const Input = styled.input`
     margin-bottom: 15px;
     border-radius: 10px;
     border: 1px solid grey;
-    width: 400px;
+    width: 90%;
     height: 40px;
     padding: 10px;
     text-align: center;
+    @media (max-width: 768px) {
+        width: 250px;
+      }
 `
 
 const Button = styled.button`
     width: 400px;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid grey;`
+    border: 1px solid grey;
+    @media (max-width: 768px) {
+        width: 250px;
+      }
+`

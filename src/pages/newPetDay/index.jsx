@@ -23,6 +23,7 @@ const PetDayContainer = styled.div`
     flex-direction: column;
 
     h1 {
+        width: 280px;
         font-size: 30px;
         font-weight: 600;
         margin: 30px 0px;

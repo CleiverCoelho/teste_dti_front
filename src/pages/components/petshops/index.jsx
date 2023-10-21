@@ -30,4 +30,8 @@ const PetshopsContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        width: 400px;
+      }
 `
