@@ -25,7 +25,7 @@ const PetshopContainer = styled.div`
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0px 10px;
     border: 1px solid grey;
@@ -34,7 +34,7 @@ const PetshopContainer = styled.div`
     margin-bottom: 40px;
     
     h1{
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 600;
     }
 `
@@ -51,6 +51,8 @@ const InfoContainer = styled.div`
 const Info = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 40%;
     height: 100%;
 
