@@ -16,7 +16,7 @@ export async function getPetshops() {
   return response.data;
 };
 
-// export async function checkPetshops() {
+// export async function createPetshop() {
 //     const response = await api.get('/petshop', body)
   
 //     return response.data;

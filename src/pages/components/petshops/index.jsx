@@ -13,6 +13,7 @@ export default function PetshopsPage () {
             {data?.map((petshop) => {
                 return (
                     <Petshop
+                        key={petshop.id}
                         petshop={petshop}
                     ></Petshop>
                 )

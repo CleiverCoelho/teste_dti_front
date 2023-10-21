@@ -1,13 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import ReactDatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
 import * as petApi from "../../../services/petshopsApi"
+import BestPetshopContext from "../../../contexts/bestPetshopContext";
 
-export default function PetDayInput({ setBestPetshop }) {
-    const [form, setForm] = React.useState({ bigSizes: "", smallSizes: "" })
-    const [date, setDate] = React.useState()
+export default function PetDayInput() {
+    const [form, setForm] = React.useState({ bigSizes: "", smallSizes: "" });
+    const [date, setDate] = React.useState();
+    const { setBestPetshop } = useContext(BestPetshopContext);
+
 
     function handleSubmit(e){
         e.preventDefault()
@@ -17,7 +20,7 @@ export default function PetDayInput({ setBestPetshop }) {
             date: dayjs(new Date(date)).format("DD/MM/YYYY")
         };
 
-        petApi.check(body).then((res) => setBestPetshop(res)).catch((err) => toast(err))
+        petApi.check(body).then((res) => setBestPetshop({...res, searchInfo: body})).catch((err) => toast(err));
     }
 
     function handleChangeForm (event){

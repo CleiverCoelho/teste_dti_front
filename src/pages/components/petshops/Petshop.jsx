@@ -1,27 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import BestPetshopContext from "../../../contexts/bestPetshopContext";
 
 export default function Petshop ({ petshop }) {
 
+    const { bestPetshop } = useContext(BestPetshopContext);
     const [petshopId, setPetshopId] = React.useState(petshop.id);
 
     return (
-        <PetshopContainer>
+        <PetshopContainer isthebestoption={(bestPetshop?.id === petshopId).toString()}>
             <h1>Primeiro Petshop</h1>
             <InfoContainer>
                 <Info>
                     <h2>Seg à Sex</h2>
-                    <p>grande porte R$ {petshop.weekDayBigPrice}</p>
-                    <p>pequeno porte R$ {petshop.weekDaySmallPrice}</p>
+                    <p>grande porte <br></br> R$ {petshop.weekDayBigPrice}</p>
+                    <p>pequeno porte <br></br> R$ {petshop.weekDaySmallPrice}</p>
                 </Info>
                 <Div></Div>
                 <Info>
                     <h2>Sab e Dom</h2>
-                    <p>grande porte R$ {petshop.weekEndBigPrice}</p>
-                    <p>pequeno porte R$ {petshop.weekEndSmallPrice}</p>
+                    <p>grande porte <br></br> R$ {petshop.weekEndBigPrice}</p>
+                    <p>pequeno porte <br></br> R$ {petshop.weekEndSmallPrice}</p>
                 </Info>
             </InfoContainer>
             <Distance>apenas {petshop.distance}m de voce</Distance>
+            <BestOptionText 
+                isthebestoption={(bestPetshop?.id === petshopId).toString()}
+                >
+                    É sua melhor opção da ultima pesquisa para o dia: {bestPetshop?.searchInfo?.date}
+            </BestOptionText>
         </PetshopContainer>
     )
 }
@@ -34,7 +41,7 @@ const PetshopContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 0px 10px;
-    border: 1px solid grey;
+    border: ${(props) => `${props.isthebestoption === "true" ? "10px" : "1px"} solid grey`};
     border-radius: 15px;
     margin-bottom: 40px;
     
@@ -63,6 +70,17 @@ const Distance = styled.div`
     margin-bottom: 10px;
 `
 
+const BestOptionText = styled.div`
+    width: 90%;
+    height: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: 'dark-yellow';
+    margin-bottom: 10px;
+    /* display: none; */
+    display: ${(props) => `${props.isthebestoption === "true" ? 'flex' : 'none'}`};
+`
+
 const InfoContainer = styled.div`
     width: 90%;
     height: 100%;
@@ -87,6 +105,6 @@ const Info = styled.div`
     }
 
     p {
-        width: 90%;
+        width: 100%;
     }
 `
