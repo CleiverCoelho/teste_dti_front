@@ -4,8 +4,8 @@ import ReactDatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function PetDayInput() {
-    const [form, setForm] = React.useState({ date: "", bigSizes: "", smallSizes: "" })
-    const [date, setDate] = React.useState(new Date())
+    const [form, setForm] = React.useState({ bigSizes: "", smallSizes: "" })
+    const [date, setDate] = React.useState()
 
     function handleSubmit(e){
         e.preventDefault()
@@ -56,6 +56,7 @@ const DatePicker = styled(ReactDatePicker)`
     padding: 10px;
     font-weight: 400;
     font-size: large;
+    text-align: center;
 `
 
 const PetDayInputContainer = styled.div`
@@ -83,6 +84,7 @@ const Input = styled.input`
     width: 400px;
     height: 40px;
     padding: 10px;
+    text-align: center;
 `
 
 const Button = styled.button`
