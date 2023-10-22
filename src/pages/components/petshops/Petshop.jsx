@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import BestPetshopContext from "../../../contexts/bestPetshopContext";
+import dayjs from "dayjs";
 
 export default function Petshop ({ petshop }) {
 
@@ -27,7 +28,7 @@ export default function Petshop ({ petshop }) {
             <BestOptionText 
                 isthebestoption={(bestPetshop?.id === petshopId).toString()}
                 >
-                    É sua melhor opção da ultima pesquisa para o dia: {bestPetshop?.searchInfo?.date}
+                    É sua melhor opção da ultima pesquisa para o dia: {dayjs(new Date(bestPetshop?.searchInfo?.date)).format("DD/MM/YYYY")}
             </BestOptionText>
         </PetshopContainer>
     )
