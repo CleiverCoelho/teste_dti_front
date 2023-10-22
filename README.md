@@ -7,7 +7,10 @@ ps: demorou para carregar as informações e os petshops na página? o site de d
 O link para o repositório do back-end segue: https://github.com/CleiverCoelho/teste_dti_back
 
 
-https://github.com/CleiverCoelho/teste_dti_front/assets/102709370/d350ae2e-21f1-480e-8e12-6a3300cd67ff
+
+https://github.com/CleiverCoelho/teste_dti_front/assets/102709370/f00b6ac0-b1a5-4815-a78d-84d11af9c191
+
+
 
 
 ## Premissas
@@ -24,7 +27,7 @@ https://github.com/CleiverCoelho/teste_dti_front/assets/102709370/d350ae2e-21f1-
 ## Instalação
 
 ```bash
-$ git clone https://github.com/CleiverCoelho/teste_dti_front
+$ git clone https://github.com/CleiverCoelho/teste_dti_front.git
 $ cd teste_dti_front
 $ npm install
 ```
