@@ -28,7 +28,10 @@ export default function PetDayInput() {
             setBestPetshop({...res, searchInfo: body});
             setPetshopResult(...res);
         })
-        .catch((err) => toast(err.response.data.error));
+        .catch((err) => {
+            if(err.response.data.error) return toast(err.response.data.error)
+            return toast(err.response.data.message)
+        });
     }
 
     function handleChangeForm (event){
