@@ -21,7 +21,7 @@ export default function PetDayInput() {
         const body = {
             bigSizesCount: parseInt(form.bigSizes), 
             smallSizesCount: parseInt(form.smallSizes),
-            date: dayjs(new Date(date)).format("DD/MM/YYYY")
+            date: new Date(date)
         };
 
         petApi.check(body).then((res) => {
