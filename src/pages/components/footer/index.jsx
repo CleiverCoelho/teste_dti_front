@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 export default function Footer() {
     return (
         <FooterContainer>
-            <Option to="newpetshop">Novo Petshop</Option>
+            {/* New Feature to come */}
+            {/* <Option to="newpetshop">Novo Petshop</Option> */}
             <Option to="/">Home</Option>
             <Option to="/newpetday">Novo PetDay</Option>
         </FooterContainer>
