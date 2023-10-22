@@ -29,8 +29,7 @@ export default function PetDayInput() {
             setPetshopResult(...res);
         })
         .catch((err) => {
-            if(err.response.data.error) return toast(err.response.data.error)
-            return toast(err.response.data.message)
+            toast(err.response?.data.error);
         });
     }
 
