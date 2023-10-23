@@ -2,7 +2,7 @@
 
 Voce pode testar o deploy da aplicação no seguinte link: https://teste-dti-front.vercel.app/ <br/> <br/>
 
-ps: demorou para carregar as informações e os petshops na página? o site de deploy do render para o back-end nos informa que "Free instance types will spin down with inactivity". Ou seja, a latencia de requisição está "dormente", então é só esperar um pouco que as informações vão aparecer na tela em instantes. Dessa forma, feito uma requisição, basta esperar um pouco que ela volta ao normal. A partir disso, as requisicoes seguintes devem ser retornadas em tempo hábil.
+ps: demorou para carregar as informações e os petshops na página? o site de deploy do render para o back-end nos informa que "Free instance types will spin down with inactivity". Ou seja, a latencia de requisição está "dormente", então é só esperar um pouquinho e atualizar a pagina que as informações vão aparecer na tela em instantes. Dessa forma, feito uma requisição, basta esperar um pouco que ela volta ao normal. A partir disso, as requisicoes seguintes devem ser retornadas em tempo hábil.
 
 O link para o repositório do back-end segue: https://github.com/CleiverCoelho/teste_dti_back
 
